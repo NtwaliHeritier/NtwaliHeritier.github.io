@@ -17,8 +17,8 @@ In this project, I built a simple web page fetching data from a public api and d
 To get a local copy of the repository and run the project, please run the following commands on your terminal:
 
 ```bash
-$ git clone https://github.com/NtwaliHeritier/js-project
-$ cd js-project
+$ git clone https://github.com/NtwaliHeritier/NtwaliHeritier.github.io
+$ cd NtwaliHeritier.github.io
 $ double-click on the index.html
 ```
 
