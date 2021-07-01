@@ -17,8 +17,8 @@ window.addEventListener("load", async () => {
         childDiv.innerHTML = `<span>${user.name}</span>
                             <span>${user.email}</span>
                             <form>
-                                <input type="hidden" value=${user.id} name="id"></input>
-                                <input type="hidden" value=${user.name} name="name"></input>
+                                <input type="hidden" value=${user.id}></input>
+                                <input type="hidden" value=${user.name}></input>
                                 <button class="button">See posts</button>
                             </form>`;
         parentDiv.appendChild(childDiv);
@@ -63,6 +63,7 @@ body.addEventListener("click", async (e) => {
         e.preventDefault();
         const nameTag = e.target.previousElementSibling;
         const idTag = nameTag.previousElementSibling;
+        console.log(nameTag);
         const posts = await postLoaded(idTag.value);
         document.querySelector("#user-container").remove();
         loadPostsOnDom(posts, nameTag.value);

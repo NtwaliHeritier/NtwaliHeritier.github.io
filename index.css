@@ -67,3 +67,24 @@ h4 {
 .post-body {
     font-size: 16px;
 }
+
+@media screen and (max-width: 992px) {
+    .child-div {
+        width: 31%;
+        margin: 1% 1%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .child-div {
+        width: 48%;
+        margin: 1% 1%;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .child-div {
+        width: 98%;
+        margin: 1% 1%;
+    }
+  }
