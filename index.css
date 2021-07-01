@@ -26,7 +26,7 @@ span {
     font-size: 18px;
 }
 
-button {
+.button {
     display: block;
     padding: 3%;
     margin: 5% auto 1%;
@@ -38,15 +38,21 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background-color: #00c4a7;
     color: #fff;
 }
 
 .anchor {
-    display: block;
     text-decoration: none;
     margin: 2% 5%;
+    border: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.anchor:hover {
+    color: #00c4a7;
 }
 
 h3 {

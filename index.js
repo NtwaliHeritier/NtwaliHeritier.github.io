@@ -36,10 +36,12 @@ const postLoaded = async(id) => {
 }
 
 const loadPostsOnDom = (posts, name) => {
-    const anchor = document.createElement('a');
-    anchor.setAttribute("href", document.referrer);
+    const anchor = document.createElement('button');
     anchor.setAttribute("class", "anchor");
     anchor.textContent = "Back"
+    anchor.addEventListener('click', () => {
+        window.history.go();
+    });
     body.appendChild(anchor);
     const title = document.createElement("h3");
     title.textContent=`Posts by ${name}`;
