@@ -13,7 +13,13 @@ window.addEventListener("load", async () => {
     ul.setAttribute("id", "user-container");
     for(user of users) {
         const li = document.createElement("li")
-        li.innerHTML = `<span>${user.name}</span><span>${user.email}</span><button class="button" id=${user.id}>See more</button>`;
+        li.innerHTML = `<span>${user.name}</span><span>${user.email}</span>
+        <form>
+            <input type="hidden" name="id" value=${user.id} ></input>
+            <input type="hidden" name="name" value=${user.name}></input>
+        <button class="button">See more</button>
+        </form>
+        `;
         ul.appendChild(li);
     }
     body.appendChild(ul);
@@ -28,11 +34,14 @@ const postLoaded = async(id) => {
     return posts
 }
 
-const loadPostsOnDom = (posts) => {
+const loadPostsOnDom = (posts, name) => {
     const anchor = document.createElement('a');
     anchor.setAttribute("href", "./index.html");
     anchor.textContent = "Back"
     body.appendChild(anchor);
+    const title = document.createElement("h3");
+    title.textContent=`Posts by ${name}`;
+    body.appendChild(title);
     const ul = document.createElement("ul");
     for(post of posts) {
         const li = document.createElement("li");
@@ -44,8 +53,13 @@ const loadPostsOnDom = (posts) => {
 
 body.addEventListener("click", async (e) => {
     if(e.target.className == "button") {
-        const posts = await postLoaded(e.target.id);
+        e.preventDefault();
+        const nameTag = e.target.previousElementSibling
+        const idTag = nameTag.previousElementSibling
+        console.log(idTag)
+        console.log(nameTag)
+        const posts = await postLoaded(idTag.value);
         document.querySelector("#user-container").remove();
-        loadPostsOnDom(posts)
+        loadPostsOnDom(posts, nameTag.value)
     }
 })
