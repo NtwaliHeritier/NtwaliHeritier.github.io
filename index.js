@@ -9,20 +9,21 @@ const loadData = async() => {
 window.addEventListener("load", async () => {
     try{
     const users = await loadData();
-    const ul = document.createElement("ul");
-    ul.setAttribute("id", "user-container");
+    const parentDiv = document.createElement("div");
+    parentDiv.setAttribute("id", "user-container");
     for(user of users) {
-        const li = document.createElement("li")
-        li.innerHTML = `<span>${user.name}</span><span>${user.email}</span>
-        <form>
-            <input type="hidden" name="id" value=${user.id} ></input>
-            <input type="hidden" name="name" value=${user.name}></input>
-        <button class="button">See more</button>
-        </form>
-        `;
-        ul.appendChild(li);
+        const childDiv = document.createElement("div")
+        childDiv.setAttribute("class", "child-div")
+        childDiv.innerHTML = `<span>${user.name}</span>
+                            <span>${user.email}</span>
+                            <form>
+                                <input type="hidden" name="id" value=${user.id} ></input>
+                                <input type="hidden" name="name" value=${user.name}></input>
+                            <button class="button">See more</button>
+                            </form>`;
+        parentDiv.appendChild(childDiv);
     }
-    body.appendChild(ul);
+    body.appendChild(parentDiv);
     } catch(e) {
         console.log(e);
     }
