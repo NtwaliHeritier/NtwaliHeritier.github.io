@@ -8,6 +8,10 @@ In this project, I built a simple web page fetching data from a public api and d
 - CSS
 - JavaScript
 
+## Live Demo
+
+- [Hosted on Github Pages](https://NtwaliHeritier.github.io/)
+
 ## Getting Started
 
 To get a local copy of the repository and run the project, please run the following commands on your terminal:
