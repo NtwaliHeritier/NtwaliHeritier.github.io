@@ -19,7 +19,7 @@ window.addEventListener("load", async () => {
                             <form>
                                 <input type="hidden" value=${user.id} name="id"></input>
                                 <input type="hidden" value=${user.name} name="name"></input>
-                                <button class="button">See more</button>
+                                <button class="button">See posts</button>
                             </form>`;
         parentDiv.appendChild(childDiv);
     }
@@ -50,7 +50,7 @@ const loadPostsOnDom = (posts, name) => {
         const childDiv = document.createElement("div");
         childDiv.setAttribute("class", "child-div")
         childDiv.innerHTML = `<h4>${post.title}</h4>
-                                <p>${post.body}</p>`;
+                                <p class="post-body">${post.body}</p>`;
         parentDiv.appendChild(childDiv);
     }
     body.appendChild(parentDiv);
