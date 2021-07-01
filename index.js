@@ -40,7 +40,7 @@ const loadPostsOnDom = (posts, name) => {
     anchor.setAttribute("class", "anchor");
     anchor.textContent = "Back"
     anchor.addEventListener('click', () => {
-        window.history.go();
+        location.reload();
     });
     body.appendChild(anchor);
     const title = document.createElement("h3");
