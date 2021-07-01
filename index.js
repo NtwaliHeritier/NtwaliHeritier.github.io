@@ -37,7 +37,7 @@ const postLoaded = async(id) => {
 
 const loadPostsOnDom = (posts, name) => {
     const anchor = document.createElement('a');
-    anchor.setAttribute("href", "./index.html");
+    anchor.setAttribute("href", document.referrer);
     anchor.setAttribute("class", "anchor");
     anchor.textContent = "Back"
     body.appendChild(anchor);
